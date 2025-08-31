@@ -17,4 +17,11 @@ graph LR
     Desktop --> Server
     iOS --> Server
     Android --> Server
+
+    click Web href "./web"
+    click CLI href "./cli"
+    click Desktop href "./desktop"
+    click iOS href "./ios"
+    click Android href "./android"
+    click Server href "./server"
 ```
