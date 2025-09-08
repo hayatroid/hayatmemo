@@ -1,5 +1,5 @@
 ---
-title: なんでも覚書
+title: は
 ---
 
 minimal で reproducible なものを残していきます。
