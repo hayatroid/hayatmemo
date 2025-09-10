@@ -1,0 +1,9 @@
+---
+title: "A. Pawn on a Grid"
+---
+
+> [!missing]
+>
+> 解説はまだありません。
+
+[問題はこちら](https://atcoder.jp/contests/abc280/tasks/abc280_a)

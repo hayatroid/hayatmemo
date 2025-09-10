@@ -1,0 +1,9 @@
+---
+title: "A. Day of Takahashi"
+---
+
+> [!missing]
+>
+> 解説はまだありません。
+
+[問題はこちら](https://atcoder.jp/contests/abc096/tasks/abc096_a)
