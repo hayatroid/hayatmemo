@@ -10,7 +10,7 @@ title: "B. Looped Rope"
 
 ## 回答
 
-14–20 行目のようにして、上下左右で隣り合うマスのうち黒く塗られているものを数え上げることができる（[提出](https://atcoder.jp/contests/abc422/submissions/69246692)）。
+14–20 行目のようにして、上下左右マスのうち黒く塗られているマスを数え上げることができる（[提出](https://atcoder.jp/contests/abc422/submissions/69246692)）。
 
 ```rs
 use proconio::{input, marker::Chars};
