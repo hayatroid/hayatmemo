@@ -1,9 +1,0 @@
----
-title: "A. 足し算"
----
-
-> [!missing]
->
-> 解説はまだありません。
-
-[問題はこちら](https://atcoder.jp/contests/abc021/tasks/abc021_a)

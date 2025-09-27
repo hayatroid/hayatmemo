@@ -1,9 +1,0 @@
----
-title: "D. Lunlun Number"
----
-
-> [!missing]
->
-> 解説はまだありません。
-
-[問題はこちら](https://atcoder.jp/contests/abc161/tasks/abc161_d)

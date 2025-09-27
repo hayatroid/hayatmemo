@@ -1,5 +1,0 @@
----
-title: ABC163
----
-
-[コンテストはこちら](https://atcoder.jp/contests/abc163)

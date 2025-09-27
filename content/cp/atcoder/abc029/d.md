@@ -1,9 +1,0 @@
----
-title: "D. 1"
----
-
-> [!missing]
->
-> 解説はまだありません。
-
-[問題はこちら](https://atcoder.jp/contests/abc029/tasks/abc029_d)

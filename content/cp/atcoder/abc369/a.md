@@ -1,9 +1,0 @@
----
-title: "A. 369"
----
-
-> [!missing]
->
-> 解説はまだありません。
-
-[問題はこちら](https://atcoder.jp/contests/abc369/tasks/abc369_a)
