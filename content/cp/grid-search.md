@@ -47,9 +47,18 @@ for (dx, dy) in [(1, 0), (0, 1), (-1, 0), (0, -1)] {
     if nx < 0 || ny < 0 {
         continue;
     }
-    let (nx, ny) = (x as usize, y as usize);
+    let (nx, ny) = (nx as usize, ny as usize);
     if nx < h && ny < w {
         todo!();
     }
 }
 ```
+
+> [!example]
+>
+> 上記のコードを用いて、次の問題を解くことができる。
+>
+> - [AtCoder Typical Contest 001 - A - 深さ優先探索](https://atcoder.jp/contests/atc001/tasks/dfs_a)
+>   - [提出 1](https://atcoder.jp/contests/atc001/submissions/69798091)（`usize::wrapping_add_signed` を使う）
+>   - [提出 2](https://atcoder.jp/contests/atc001/submissions/69798111)（`!0` を足す）
+>   - [提出 3](https://atcoder.jp/contests/atc001/submissions/69798146)（型変換する）
