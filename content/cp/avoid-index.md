@@ -14,11 +14,7 @@ Rust のベクタやイテレータに実装されたメソッドを用いるこ
 これは次のように実装できるが、列の長さが $3$ に満たない場合でも判定できているか、境界までくまなく判定できているかが怖い。
 
 ```rs
-let ok = if a.len() < 3 {
-    true
-} else {
-    (0..=a.len() - 3).all(|i| a[i] * a[i + 2] == a[i + 1] * a[i + 1])
-};
+let ok = a.len() < 3 || (0..=a.len() - 3).all(|i| a[i] * a[i + 2] == a[i + 1] * a[i + 1]);
 ```
 
 ベクタやスライスに対する `windows` を用いると、境界を意識せずに済む。
@@ -39,7 +35,7 @@ let ok = a.iter().tuple_windows().all(|(x, y, z)| x * z == y * y);
 > 上記のコードを用いて、次の問題を解くことができる。
 >
 > - [AtCoder Beginner Contest 390 - B - Geometric Sequence](https://atcoder.jp/contests/abc390/tasks/abc390_b)
->   - [提出 1](https://atcoder.jp/contests/abc390/submissions/69794711)（添字を書く）
+>   - [提出 1](https://atcoder.jp/contests/abc390/submissions/70566824)（添字を書く）
 >   - [提出 2](https://atcoder.jp/contests/abc390/submissions/69794713)（添字を書かない・itertools なし）
 >   - [提出 3](https://atcoder.jp/contests/abc390/submissions/69794729)（添字を書かない・itertools あり）
 
