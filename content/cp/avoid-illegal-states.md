@@ -9,29 +9,39 @@ description: "型を意図的に使い分けることで、ある種のミスを
 
 ## `usize` と `u64` を使い分ける例
 
-グラフの問題では、頂点番号や辺の重みなど、次元の異なる値が入力に現れる。
-これらをすべて `usize` で受け取ると、頂点番号と辺の重みを型で区別できない。
+ナップザック DP では重さ `w` と価値 `v` を扱う。
+どちらも `usize` で持つと、`dp[i - w] + v` と書くべき場所に `dp[i - v] + w` と書いてもコンパイルは通る。
+しかも、添字も値も範囲内に収まることがあり、バグに気づきにくい。
 
-たとえば、本来 `dist[u]` と書く場所で `dist[w]` と書いてもコンパイルが通ってしまう。
-
-そこで、頂点番号を `usize` で受け取り、辺の重みを `u64` で受け取る。
-このとき、`u64` を添字として使えないので、誤った添字アクセスをコンパイルエラーにできる。
+そこで、重さを `usize` で、価値を `u64` で持つ。
 
 ```rs
 input! {
     n: usize,
-    m: usize,
-    uvw: [(usize, usize, u64); m],
+    cap: usize,
+    wv: [(usize, u64); n],
 }
-let mut dist = vec![0; n];
-for (u, v, w) in uvw {
-    dist[w] += 1; // the type `[{integer}]` cannot be indexed by `u64`
+let mut dp = vec![0; cap + 1];
+for (w, v) in wv {
+    for i in (w..=cap).rev() {
+        dp[i] = dp[i].max(dp[i - w] + v);
+        // dp[i - v]  // cannot subtract `u64` from `usize`
+    }
 }
 ```
 
-Rust では、暗黙の型変換がないので、両者は混ざらない。
+Rust に暗黙の型変換がないので、両者は混ざらない。
 
-実務でも、`UserId` と `PostId` のような ID 系の取り違え防止に同じ手が使える。
+> [!tip]
+>
+> 実務でも、`UserId` と `PostId` のような ID 系の取り違え防止に同じ手が使える。
+
+> [!example]
+>
+> 上記のコードを用いて、次の問題を解くことができる。
+>
+> - [Educational DP Contest - D - Knapsack 1](https://atcoder.jp/contests/dp/tasks/dp_d)
+>   - [提出](https://atcoder.jp/contests/dp/submissions/75314100)
 
 ## `Point` と `Vector` を使い分ける例
 
@@ -99,7 +109,7 @@ impl Mul<f64> for Vector {
 }
 ```
 
-内積 $v \cdot w$ は `impl Vector` のメソッドとして実装する。
+内積 $v \cdot w$ は `Vector` のメソッドとして実装する。
 
 ```rs
 impl Vector {
